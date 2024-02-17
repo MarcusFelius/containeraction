@@ -2,7 +2,8 @@
 
 #!/bin/sh
 
-echo "Hello $INPUT_MYINPUT"
+echo "Hello my friend"
 memory=$(cat /proc/meminfo)
+echo "memory $memory"
 echo "::set-output name=memory::$memory"
 
