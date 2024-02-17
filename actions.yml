@@ -1,0 +1,18 @@
+# this is where the magic happens
+# it should get the memory used by the container?
+
+name: 'memory action'
+description: 'getting the memory as requested'
+inputs:
+  input_arg:
+    description: 'Some input from the triggered workflow file'
+    required: true
+    default: 'default'
+outputs:
+    output_var:
+      description: 'the output var'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - input: '{{ inputs.input_arg}}'
