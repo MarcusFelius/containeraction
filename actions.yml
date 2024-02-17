@@ -1,16 +1,16 @@
 # this is where the magic happens
 # it should get the memory used by the container?
-
-name: 'memory action'
-description: 'getting the memory as requested'
+name: 'my first container action'
+description: 'A cloud guru'
+author: 'Chad Crowell'
 inputs:
-  input_arg:
-    description: 'Some input from the triggered workflow file'
+  myInput:
+    description: 'greeting to use'
     required: true
-    default: 'default'
+    default: 'Awesome Guru'
 outputs:
-    output_var:
-      description: 'the output var'
+  output_var:
+    description: 'total memory'
 runs:
   using: 'docker'
   image: 'Dockerfile'
