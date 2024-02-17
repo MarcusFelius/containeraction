@@ -1,0 +1,20 @@
+# container workflow file for github actions
+#
+
+on: [push]
+jobs:
+  running_my_container:
+    runs-on: ubuntu-latest
+    name: the job for running the action
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: action step
+        id: outputContainer
+        uses: ./
+        with:
+          input_arg: some random input
+      - name: output the mem
+        run: |
+          echo ${{ steps.outputContainer.outputs.memory}}
+          echo "total memory successfullt output"
